@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aunsetre.mapping.ReliationMapper">
+  <resultMap id="BaseResultMap" type="com.aunsetre.pojo.Reliation">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="rid" jdbcType="INTEGER" property="rid" />
+    <result column="aid" jdbcType="INTEGER" property="aid" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from reliation
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.aunsetre.pojo.Reliation">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into reliation (rid, aid)
+    values (#{rid,jdbcType=INTEGER}, #{aid,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.aunsetre.pojo.Reliation">
+    update reliation
+    set rid = #{rid,jdbcType=INTEGER},
+      aid = #{aid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, rid, aid
+    from reliation
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, rid, aid
+    from reliation
+  </select>
+  <resultMap id="BaseResultMap" type="com.aunsetre.pojo.Reliation">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="rid" jdbcType="INTEGER" property="rid" />
+    <result column="aid" jdbcType="INTEGER" property="aid" />
+  </resultMap>
+  <resultMap id="BaseResultMap" type="com.aunsetre.pojo.Reliation">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="rid" jdbcType="INTEGER" property="rid" />
+    <result column="aid" jdbcType="INTEGER" property="aid" />
+  </resultMap>
+  <resultMap id="BaseResultMap" type="com.aunsetre.pojo.Reliation">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="rid" jdbcType="INTEGER" property="rid" />
+    <result column="aid" jdbcType="INTEGER" property="aid" />
+  </resultMap>
+  <resultMap id="BaseResultMap" type="com.aunsetre.pojo.Reliation">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="rid" jdbcType="INTEGER" property="rid" />
+    <result column="aid" jdbcType="INTEGER" property="aid" />
+  </resultMap>
+</mapper>

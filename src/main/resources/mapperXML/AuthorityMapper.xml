@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aunsetre.mapping.AuthorityMapper">
+  <resultMap id="BaseResultMap" type="com.aunsetre.pojo.Authority">
+    <id column="aid" jdbcType="INTEGER" property="aid" />
+    <result column="aname" jdbcType="VARCHAR" property="aname" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from authority
+    where aid = #{aid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.aunsetre.pojo.Authority">
+    insert into authority (aid, aname)
+    values (#{aid,jdbcType=INTEGER}, #{aname,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.aunsetre.pojo.Authority">
+    update authority
+    set aname = #{aname,jdbcType=VARCHAR}
+    where aid = #{aid,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select aid, aname
+    from authority
+    where aid = #{aid,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select aid, aname
+    from authority
+  </select>
+  <resultMap id="BaseResultMap" type="com.aunsetre.pojo.Authority">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="aid" jdbcType="INTEGER" property="aid" />
+    <result column="aname" jdbcType="VARCHAR" property="aname" />
+  </resultMap>
+  <resultMap id="BaseResultMap" type="com.aunsetre.pojo.Authority">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="aid" jdbcType="INTEGER" property="aid" />
+    <result column="aname" jdbcType="VARCHAR" property="aname" />
+  </resultMap>
+  <resultMap id="BaseResultMap" type="com.aunsetre.pojo.Authority">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="aid" jdbcType="INTEGER" property="aid" />
+    <result column="aname" jdbcType="VARCHAR" property="aname" />
+  </resultMap>
+  <resultMap id="BaseResultMap" type="com.aunsetre.pojo.Authority">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="aid" jdbcType="INTEGER" property="aid" />
+    <result column="aname" jdbcType="VARCHAR" property="aname" />
+  </resultMap>
+</mapper>

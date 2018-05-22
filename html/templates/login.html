@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!--head部分-->
+<head th:include="layout.html">
+    <title>登录</title>
+</head>
+
+<body>
+<script>
+    //一般直接写在一个js文件中
+    layui.use(['layer', 'form'], function(){
+        var layer = layui.layer
+            ,form = layui.form;
+
+        layer.msg('Hello World');
+    });
+</script>
+<form action="/dologin" method="post">
+    <label class="layui-form-label">帐号：</label>
+    <div class="layui-input-block">
+        <input type="text" style="width: 100px;" name="name" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+    </div>
+    <label class="layui-form-label">密码：</label>
+    <div class="layui-input-block">
+        <input type="text" style="width: 100px;" name="pwd" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </div>
+
+</form>
+
+</body>
+</html>

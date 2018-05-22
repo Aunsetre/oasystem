@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aunsetre.mapping.UserMapper">
+  <resultMap id="BaseResultMap" type="com.aunsetre.pojo.User">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="pwd" jdbcType="VARCHAR" property="pwd" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="Retime" jdbcType="TIMESTAMP" property="retime" />
+    <result column="state" jdbcType="INTEGER" property="state" />
+    <result column="rid" jdbcType="INTEGER" property="rid" />
+    <result column="logId" jdbcType="INTEGER" property="logid" />
+  </resultMap>
+  <select id="login" resultType="User">
+    select * from USER where name=#{account},pwd=#{pwd}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from user
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.aunsetre.pojo.User">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into user (name, pwd, email, 
+      Retime, state, rid, 
+      logId)
+    values (#{name,jdbcType=VARCHAR}, #{pwd,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
+      #{retime,jdbcType=TIMESTAMP}, #{state,jdbcType=INTEGER}, #{rid,jdbcType=INTEGER}, 
+      #{logid,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.aunsetre.pojo.User">
+    update user
+    set name = #{name,jdbcType=VARCHAR},
+      pwd = #{pwd,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      Retime = #{retime,jdbcType=TIMESTAMP},
+      state = #{state,jdbcType=INTEGER},
+      rid = #{rid,jdbcType=INTEGER},
+      logId = #{logid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, name, pwd, email, Retime, state, rid, logId
+    from user
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, name, pwd, email, Retime, state, rid, logId
+    from user
+  </select>
+  <resultMap id="BaseResultMap" type="com.aunsetre.pojo.User">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="pwd" jdbcType="VARCHAR" property="pwd" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="Retime" jdbcType="TIMESTAMP" property="retime" />
+    <result column="state" jdbcType="INTEGER" property="state" />
+    <result column="rid" jdbcType="INTEGER" property="rid" />
+    <result column="logId" jdbcType="INTEGER" property="logid" />
+  </resultMap>
+  <resultMap id="BaseResultMap" type="com.aunsetre.pojo.User">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="pwd" jdbcType="VARCHAR" property="pwd" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="Retime" jdbcType="TIMESTAMP" property="retime" />
+    <result column="state" jdbcType="INTEGER" property="state" />
+    <result column="rid" jdbcType="INTEGER" property="rid" />
+    <result column="logId" jdbcType="INTEGER" property="logid" />
+  </resultMap>
+  <resultMap id="BaseResultMap" type="com.aunsetre.pojo.User">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="pwd" jdbcType="VARCHAR" property="pwd" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="Retime" jdbcType="TIMESTAMP" property="retime" />
+    <result column="state" jdbcType="INTEGER" property="state" />
+    <result column="rid" jdbcType="INTEGER" property="rid" />
+    <result column="logId" jdbcType="INTEGER" property="logid" />
+  </resultMap>
+  <resultMap id="BaseResultMap" type="com.aunsetre.pojo.User">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="pwd" jdbcType="VARCHAR" property="pwd" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="Retime" jdbcType="TIMESTAMP" property="retime" />
+    <result column="state" jdbcType="INTEGER" property="state" />
+    <result column="rid" jdbcType="INTEGER" property="rid" />
+    <result column="logId" jdbcType="INTEGER" property="logid" />
+  </resultMap>
+</mapper>
