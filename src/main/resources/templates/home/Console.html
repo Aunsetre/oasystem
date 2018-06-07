@@ -1,0 +1,214 @@
+<link rel="stylesheet" th:href="@{/layui/css/layui.css}" media="all">
+    <link rel="stylesheet" th:href="@{/layui/css/layui.css}" media="all">
+    <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
+    <style>
+        .layui-progress h3 {
+            position: absolute;
+            right: 0;
+            top: -20px;
+            color: #999;
+            font-size: 14px;
+        }
+        h3 {
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+        }
+    </style>
+</head>
+
+
+
+<div class="layui-fluid" style="padding: 20px; background-color: #F2F2F2;">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md4">
+            <div class="layui-card" >
+                <div class="layui-card-header">卡片面板</div>
+                <div class="layui-card-body">
+                    卡片式面板面板通常用于非白色背景色的主体内<br>
+                    从而映衬出边框投影
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md4">
+            <div class="layui-card">
+                <div class="layui-card-header">代办事项</div>
+                <div class="layui-card-body">
+                    结合 layui 的栅格系统<br>
+                    轻松实现响应式布局
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md4">
+            <div class="layui-card">
+                <div class="layui-card-header">版本信息</div>
+                <div class="layui-card-body">
+                    结合 layui 的栅格系统<br>
+                    轻松实现响应式布局
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md8">
+            <div class="layui-card" style="height: 500px">
+                <div class="layui-card-header">数据概览</div>
+                <div class="layui-card-body" style="height: 400px" id="chart">
+
+                </div>
+            </div>
+        </div>
+        <script src="http://echarts.baidu.com/build/dist/echarts-all.js"></script>
+        <script type="text/javascript">
+
+                    // 基于准备好的dom，初始化echarts图表
+                    var myChart = echarts.init(document.getElementById('chart'));
+
+                  var option = {
+                      title : {
+                          text: '日志记录',
+                          subtext: '纯属虚构'
+                      },
+                      tooltip : {
+                          trigger: 'axis'
+                      },
+                      legend: {
+                          data:['意向','预购','成交']
+                      },
+                      toolbox: {
+                          show : true,
+                          feature : {
+                              mark : {show: true},
+                              dataView : {show: true, readOnly: false},
+                              magicType : {show: true, type: ['line', 'bar', 'stack', 'tiled']},
+                              restore : {show: true},
+                              saveAsImage : {show: true}
+                          }
+                      },
+                      calculable : true,
+                      xAxis : [
+                          {
+                              type : 'category',
+                              boundaryGap : false,
+                              data : ['周一','周二','周三','周四','周五','周六','周日']
+                          }
+                      ],
+                      yAxis : [
+                          {
+                              type : 'value'
+                          }
+                      ],
+                      series : [
+                          {
+                              name:'成交',
+                              type:'line',
+                              smooth:true,
+                              itemStyle: {normal: {areaStyle: {type: 'default'}}},
+                              data:[10, 12, 21, 54, 260, 830, 710]
+                          },
+                          {
+                              name:'预购',
+                              type:'line',
+                              smooth:true,
+                              itemStyle: {normal: {areaStyle: {type: 'default'}}},
+                              data:[30, 182, 434, 791, 390, 30, 10]
+                          },
+                          {
+                              name:'意向',
+                              type:'line',
+                              smooth:true,
+                              itemStyle: {normal: {areaStyle: {type: 'default'}}},
+                              data:[1320, 1132, 601, 234, 120, 90, 20]
+                          }
+                      ]
+                  };
+
+
+                    // 为echarts对象加载数据
+                    myChart.setOption(option);
+
+
+        </script>
+        <div class="layui-col-md4">
+            <div class="layui-card">
+                <div class="layui-card-header">版本信息</div>
+                <div class="layui-card-body">
+                    <table class="layui-table">
+                        <colgroup>
+                            <col width="150">
+                        </colgroup>
+                        <tbody>
+                        <tr>
+                            <td>JAVA版本</td>
+                            <td>汉族</td>
+                        </tr>
+                        </tbody>
+                        <tbody>
+                        <tr>
+                            <td>MYSQL版本</td>
+                            <td>汉族</td>
+                        </tr>
+                        </tbody>
+                        <tbody>
+                        <tr>
+                            <td>CPU个数</td>
+                            <td>汉族</td>
+                        </tr>
+                        </tbody>
+                        <tbody>
+                        <tr>
+                            <td>虚拟机内存总量</td>
+                            <td>汉族</td>
+                        </tr>
+                        </tbody>
+                        <tbody>
+                        <tr>
+                            <td>虚拟机空闲内存量</td>
+                            <td>汉族</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                </div>
+            <div class="layui-card" style="height: 200px;">
+                <div class="layui-card-header">版本信息</div>
+                <div class="layui-card-body">
+                    <div class="layui-progress layui-progress-big" lay-showPercent="yes" style="margin-top: 30px">
+
+                        <h3>CPU使用率</h3>
+                        <div class="layui-progress-bar layui-bg-green"  lay-percent="30%"></div>
+
+                    </div>
+                    <div class="layui-progress layui-progress-big" lay-showPercent="yes" style="margin-top: 40px">
+
+                        <h3>RAM使用率</h3>
+                        <div class="layui-progress-bar layui-bg-green" lay-percent="30%"></div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<script th:src="@{/layui/layui.js}"></script>
+<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+<script>
+
+            layui.use(['element', 'layer'], function(){
+        var element = layui.element;
+        var layer = layui.layer;
+
+        //监听折叠
+        element.on('collapse(test)', function(data){
+            layer.msg('展开状态：'+ data.show);
+        });
+    });
+</script>

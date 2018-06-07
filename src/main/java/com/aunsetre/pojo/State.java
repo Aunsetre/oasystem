@@ -1,8 +1,5 @@
 package com.aunsetre.pojo;
 
-import lombok.Data;
-
-@Data
 public class State {
     private Integer id;
 

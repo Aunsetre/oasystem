@@ -1,9 +1,7 @@
 package com.aunsetre.pojo;
 
-import lombok.Data;
-
 import java.util.Date;
-@Data
+
 public class Log {
     private Integer id;
 

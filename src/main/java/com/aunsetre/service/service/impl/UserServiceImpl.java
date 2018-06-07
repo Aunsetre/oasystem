@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.List;
 
-@Service
+@Service("UserService")
 public class UserServiceImpl implements UserService {
     @Resource
     public UserMapper userMapper;
@@ -18,10 +18,14 @@ public class UserServiceImpl implements UserService {
         return userMapper.selectAll();
     }
 
-    @Override
+    /*@Override
     public User login(String name, String pwd) {
         User user=userMapper.login(name,pwd);
-        System.out.print(user);
         return user;
+    }*/
+
+    @Override
+    public User login(String name, String pwd) {
+        return null;
     }
 }

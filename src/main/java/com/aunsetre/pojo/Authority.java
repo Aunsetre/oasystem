@@ -1,14 +1,9 @@
 package com.aunsetre.pojo;
 
-import lombok.Data;
-
-@Data
-public class  Authority {
+public class Authority {
     private Integer aid;
 
     private String aname;
-
-
 
     public Integer getAid() {
         return aid;

@@ -1,7 +1,11 @@
 package com.aunsetre.pojo;
 
-import java.util.Date;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
+import java.util.Date;
+@Data
 public class User {
     private Integer id;
 
@@ -10,7 +14,7 @@ public class User {
     private String pwd;
 
     private String email;
-
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone ="GMT+8")
     private Date retime;
 
     private Integer state;
@@ -19,67 +23,5 @@ public class User {
 
     private Integer logid;
 
-    public Integer getId() {
-        return id;
-    }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
-    }
-
-    public String getPwd() {
-        return pwd;
-    }
-
-    public void setPwd(String pwd) {
-        this.pwd = pwd == null ? null : pwd.trim();
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email == null ? null : email.trim();
-    }
-
-    public Date getRetime() {
-        return retime;
-    }
-
-    public void setRetime(Date retime) {
-        this.retime = retime;
-    }
-
-    public Integer getState() {
-        return state;
-    }
-
-    public void setState(Integer state) {
-        this.state = state;
-    }
-
-    public Integer getRid() {
-        return rid;
-    }
-
-    public void setRid(Integer rid) {
-        this.rid = rid;
-    }
-
-    public Integer getLogid() {
-        return logid;
-    }
-
-    public void setLogid(Integer logid) {
-        this.logid = logid;
-    }
 }

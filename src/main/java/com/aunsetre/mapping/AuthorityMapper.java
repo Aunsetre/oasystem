@@ -1,8 +1,10 @@
 package com.aunsetre.mapping;
 
 import com.aunsetre.pojo.Authority;
-import java.util.List;
+import org.springframework.stereotype.Repository;
 
+import java.util.List;
+@Repository
 public interface AuthorityMapper {
     int deleteByPrimaryKey(Integer aid);
 
