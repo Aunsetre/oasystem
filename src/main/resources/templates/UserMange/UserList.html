@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button class="layui-btn" lay-submit  lay-filter="add">
+    <i class="layui-icon">&#xe608;</i> 添加
+</button>
+<table class="layui-table">
+    <tbody>
+    <tr>
+        <th>用户ID</th>
+        <th>用户密码</th>
+        <th>邮箱</th>
+        <th>注册时间</th>
+        <th>用户ID</th>
+        <th>用户ID</th>
+        <th>操作</th>
+    </tr>
+    <tr th:each="user : ${userinfo}">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.pwd}"></td>
+        <td th:text="${user.email}"></td>
+        <td th:text="${#dates.format(user.retime,'yyyy-MM-dd HH:mm:ss')}"></td>
+        <td th:text="${user.rid}"></td>
+        <td th:text="${user.logid}"></td>
+        <td>
+            <div class="layui-btn-container">
+                <button class="layui-btn layui-btn-sm " style="background-color: #1E9FFF">修改</button>
+                <button class="layui-btn layui-btn-sm layui-btn-danger">删除</button>
+            </div></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
