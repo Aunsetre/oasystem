@@ -1,5 +1,4 @@
 <link rel="stylesheet" th:href="@{/layui/css/layui.css}" media="all">
-    <link rel="stylesheet" th:href="@{/layui/css/layui.css}" media="all">
     <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
     <style>
         .layui-progress h3 {
@@ -9,17 +8,13 @@
             color: #999;
             font-size: 14px;
         }
-        h3 {
-            margin: 0;
-            padding: 0;
-            -webkit-tap-highlight-color: rgba(0,0,0,0);
-        }
+
     </style>
 </head>
 
 
 
-<div class="layui-fluid" style="padding: 20px; background-color: #F2F2F2;">
+<div class="layui-fluid" style="padding: 20px; background-color: #F2F2F2;" xmlns:th="http://www.thymeleaf.org">
     <div class="layui-row layui-col-space15">
         <div class="layui-col-md4">
             <div class="layui-card" >
@@ -31,20 +26,101 @@
             </div>
         </div>
         <div class="layui-col-md4">
-            <div class="layui-card">
+            <div class="layui-card" style="">
                 <div class="layui-card-header">代办事项</div>
                 <div class="layui-card-body">
-                    结合 layui 的栅格系统<br>
-                    轻松实现响应式布局
+
+                        <div class="layui-row" style="width: 100%">
+                            <style>
+                                .layui-col-sm3{
+                                    height: 100px;
+                                    width: 48%;
+                                    background-color: #F2F2F2;
+                                    margin: 3px;
+
+                                }
+                                .layui-col-sm3:hover{
+                                    background-color: #F2F9F9;
+                                }
+                                .layui-cardinside h3{
+                                    padding: 10px 20px 0;
+                                    font-size: 13px;
+                                    color: #999;
+                                }
+                                .layui-cardinside h1{
+                                    padding: 10px 20px 0;
+                                    color: #009688;
+                                }
+
+                            </style>
+                            <a class="layui-col-sm3 layui-cardinside" >
+                                <div class="grid-demo">
+                                <h3>新增日志</h3>
+                                    <p><h1>50</h1></p>
+                                </div>
+                            </a>
+                            <a class="layui-col-sm3 layui-cardinside" href="javascript:;">
+                                <div class="grid-demo">
+                                    <h3>新增员工</h3>
+                                    <p><h1>50</h1></p>
+                                </div>
+                            </a><br/>
+                            <a class="layui-col-sm3 layui-cardinside" href="javascript:;">
+                                <div class="grid-demo">
+                                    <h3>审核帖子</h3>
+                                    <p><h1>50</h1></p></div>
+                            </a>
+                            <a class="layui-col-sm3 layui-cardinside" href="javascript:;">
+                                <div class="grid-demo">
+                                    <h3>审核帖子</h3>
+                                    <p><h1>50</h1></p></div>
+                            </a>
+                        </div>
+
+
+
                 </div>
             </div>
         </div>
         <div class="layui-col-md4">
             <div class="layui-card">
-                <div class="layui-card-header">版本信息</div>
+                <div class="layui-card-header">系统信息</div>
                 <div class="layui-card-body">
-                    结合 layui 的栅格系统<br>
-                    轻松实现响应式布局
+                    <table class="layui-table">
+                        <colgroup>
+                            <col width="150">
+                        </colgroup>
+                        <tbody>
+                        <tr>
+                            <td>操作系统名称</td>
+                            <td th:text="${osName}"></td>
+                        </tr>
+                        </tbody>
+                        <tbody>
+                        <tr>
+                            <td>用户的主目录</td>
+                            <td th:text="${userHome}"></td>
+                        </tr>
+                        </tbody>
+                        <tbody>
+                        <tr>
+                            <td>服务器IP</td>
+                            <td th:text="${serverIP}"></td>
+                        </tr>
+                        </tbody>
+                        <tbody>
+                        <tr>
+                            <td>客户端IP</td>
+                            <td th:text="${clientIP}"></td>
+                        </tr>
+                        </tbody>
+                        <tbody>
+                        <tr>
+                            <td>WEB服务器</td>
+                            <td th:text="${webVersion}"></td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -138,31 +214,31 @@
                         <tbody>
                         <tr>
                             <td>JAVA版本</td>
-                            <td>汉族</td>
+                            <td th:text="${javaVersion}"></td>
                         </tr>
                         </tbody>
                         <tbody>
                         <tr>
                             <td>MYSQL版本</td>
-                            <td>汉族</td>
+                            <td th:text="${mysqlVersion}"></td>
                         </tr>
                         </tbody>
                         <tbody>
                         <tr>
                             <td>CPU个数</td>
-                            <td>汉族</td>
+                            <td th:text="${cpu}"></td>
                         </tr>
                         </tbody>
                         <tbody>
                         <tr>
                             <td>虚拟机内存总量</td>
-                            <td>汉族</td>
+                            <td th:text="${totalMemory}"></td>
                         </tr>
                         </tbody>
                         <tbody>
                         <tr>
                             <td>虚拟机空闲内存量</td>
-                            <td>汉族</td>
+                            <td th:text="${freeMemory}"></td>
                         </tr>
                         </tbody>
                     </table>

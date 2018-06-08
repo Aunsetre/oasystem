@@ -51,7 +51,7 @@
                 <li class="layui-nav-item  layui-nav-itemed">
                     <a class="" href="javascript:;"><i class="layui-icon layui-icon-home"></i>&nbsp;&nbsp;主页</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:;" target="content">控制台</a></dd>
+                        <dd><a href="javascript:;" target="content" class="layui-this">控制台</a></dd>
                         <dd><a href="javascript:;" target="content">列表二</a></dd>
                         <dd><a href="javascript:;" target="content">列表三</a></dd>
                         <dd><a href="javascript:;" target="content">超链接</a></dd>
@@ -74,11 +74,10 @@
         </div>
     </div>
 
-    <div class="layui-body">
+    <div class="layui-body" style="height: 100%">
         <!-- 内容主体区域 -->
         <div style="padding: 15px;">
-            <iframe id="content" width="100%" height="1500px" frameborder="no" th:src="@{/home/Console.html}">
-
+            <iframe id="content" width="100%" height="840px" frameborder="no" th:src="@{/home/Console.html}">
             </iframe>
         </div>
 
@@ -86,10 +85,6 @@
     </div>
 
 
-    <div class="layui-footer">
-        <!-- 底部固定区域 -->
-        © layui.com - 底部固定区域
-    </div>
 </div>
 
 </body>
