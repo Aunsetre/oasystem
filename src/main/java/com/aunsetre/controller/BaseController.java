@@ -37,6 +37,10 @@ public class BaseController {
                 new SimpleDateFormat("yyyy-MM-dd"), true));
     }
 
+    public  String getIframeURL(){
+        return request.getServletPath();
+    }
+
 
 
 }

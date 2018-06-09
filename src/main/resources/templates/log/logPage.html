@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <div th:replace="Common.html"></div>
 </head>
 <body>
+<div class="layui-fluid" style="padding: 20px; background-color: #F2F2F2;">
 <button class="layui-btn" lay-submit  lay-filter="add">
     <i class="layui-icon">&#xe608;</i> 添加
 </button>
@@ -29,11 +30,12 @@
         <td th:text="${user.logid}"></td>
         <td>
             <div class="layui-btn-container">
-                <button class="layui-btn layui-btn-sm " style="background-color: #1E9FFF">编辑</button>
+                <button class="layui-btn layui-btn-sm " style="background-color: #1E9FFF">修改</button>
                 <button class="layui-btn layui-btn-sm layui-btn-danger">删除</button>
             </div></td>
     </tr>
     </tbody>
 </table>
+</div>
 </body>
 </html>

@@ -1,4 +1,4 @@
-<link rel="stylesheet" th:href="@{/layui/css/layui.css}" media="all">
+<div th:replace="Common.html"></div>
     <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
     <style>
         .layui-progress h3 {
@@ -8,7 +8,61 @@
             color: #999;
             font-size: 14px;
         }
+        .card8{
+            height: 80px;
 
+            width: 23%;
+            margin: 35px 5px 0;
+        }
+        .first-row{
+            margin-top: 0px;
+
+        }
+        .layui-col-md3{
+            position: relative;
+            background-color: #F2F2F2;
+        }
+        .layui-card-body cite{
+            position: absolute;
+            top: 80px;
+            left: 40px;
+        }
+        .grid{
+            position: relative;
+
+            height: 100%;
+            width: 100%;
+        }
+        .card-icon{
+            height: 200px;
+            width: 100%;
+            line-height: 100%;
+        }
+        .layui-icon{
+            position: absolute;
+            font-size: 50px;
+            top: 15px;
+            left: 30%;
+        }
+        .layui-col-sm3{
+            height: 100px;
+            width: 48%;
+            background-color: #F2F2F2;
+            margin: 3px;
+
+        }
+        .layui-col-sm3:hover,.layui-col-md3{
+            background-color: #F2F9F9;
+        }
+        .layui-cardinside h3{
+            padding: 10px 20px 0;
+            font-size: 13px;
+            color: #999;
+        }
+        .layui-cardinside h1{
+            padding: 10px 20px 0;
+            color: #009688;
+        }
     </style>
 </head>
 
@@ -16,50 +70,82 @@
 
 <div class="layui-fluid" style="padding: 20px; background-color: #F2F2F2;" xmlns:th="http://www.thymeleaf.org">
     <div class="layui-row layui-col-space15">
-        <div class="layui-col-md4">
+        <div class="layui-col-md4" style="height: 290px">
             <div class="layui-card" >
-                <div class="layui-card-header">卡片面板</div>
-                <div class="layui-card-body">
-                    卡片式面板面板通常用于非白色背景色的主体内<br>
-                    从而映衬出边框投影
+                <div class="layui-card-header">快捷方式</div>
+                <div class="layui-card-body" style="height: 212px">
+
+                    <div class="layui-row">
+                        <a class="layui-col-md3 card8 first-row" href="javascript:;">
+                            <div class="grid">
+                                <i class="layui-icon layui-icon-console card-icon"></i>
+                            </div>
+                            <cite>弹层</cite>
+                        </a>
+
+                        <a class="layui-col-md3 card8 first-row" href="javascript:;">
+                            <div class="grid">
+                                <i class="layui-icon  layui-icon-template-1 card-icon"></i></div>
+                            <cite>弹层</cite>
+                        </a>
+
+                        <a class="layui-col-md3 card8 first-row" href="javascript:;">
+                            <div class="grid">
+                                <i class="layui-icon layui-icon-app card-icon"></i>
+                            </div>
+                            <cite>弹层</cite>
+                        </a>
+                        <a class="layui-col-md3 card8 first-row" href="javascript:;">
+                            <div class="grid">
+                                <i class="layui-icon layui-icon-template card-icon"></i>
+                            </div>
+                            <cite>弹层</cite>
+                        </a>
+                        <a class="layui-col-md3 card8" href="javascript:;">
+                            <div class="grid">
+                                <i class="layui-icon layui-icon-console card-icon"></i>
+                            </div>
+                            <cite>弹层</cite>
+                        </a>
+                        <a class="layui-col-md3 card8" href="javascript:;">
+                            <div class="gri"><i class="layui-icon layui-icon-console card-icon"></i>
+                            </div>
+                            <cite>弹层</cite>
+                        </a>
+                        <a class="layui-col-md3 card8" href="javascript:;">
+                            <div class="grid"><i class="layui-icon layui-icon-console card-icon"></i>
+                            </div>
+                            <cite>弹层</cite>
+                        </a>
+                        <a class="layui-col-md3 card8" href="javascript:;">
+                            <div class="grid">
+                                <i class="layui-icon layui-icon-console card-icon"></i>
+                            </div>
+                            <cite>弹层</cite>
+                        </a>
+
+
+                    </div>
                 </div>
             </div>
         </div>
         <div class="layui-col-md4">
             <div class="layui-card" style="">
-                <div class="layui-card-header">代办事项</div>
+                <div class="layui-card-header">待办事项</div>
                 <div class="layui-card-body">
 
                         <div class="layui-row" style="width: 100%">
                             <style>
-                                .layui-col-sm3{
-                                    height: 100px;
-                                    width: 48%;
-                                    background-color: #F2F2F2;
-                                    margin: 3px;
 
-                                }
-                                .layui-col-sm3:hover{
-                                    background-color: #F2F9F9;
-                                }
-                                .layui-cardinside h3{
-                                    padding: 10px 20px 0;
-                                    font-size: 13px;
-                                    color: #999;
-                                }
-                                .layui-cardinside h1{
-                                    padding: 10px 20px 0;
-                                    color: #009688;
-                                }
 
                             </style>
-                            <a class="layui-col-sm3 layui-cardinside" >
+                            <a class="layui-col-sm3 layui-cardinside" th:href="@{/log/}">
                                 <div class="grid-demo">
                                 <h3>新增日志</h3>
                                     <p><h1>50</h1></p>
                                 </div>
                             </a>
-                            <a class="layui-col-sm3 layui-cardinside" href="javascript:;">
+                            <a class="layui-col-sm3 layui-cardinside" th:href="@{/user}" >
                                 <div class="grid-demo">
                                     <h3>新增员工</h3>
                                     <p><h1>50</h1></p>

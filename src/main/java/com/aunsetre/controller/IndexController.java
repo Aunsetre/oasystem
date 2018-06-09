@@ -17,8 +17,6 @@ public class IndexController extends BaseController {
     private UserService userService;
     @RequestMapping(value = {"/","index.html"},produces="text/plain;charset=UTF-8")
     public String indexUrl(Model map){
-        List<User> userList=userService.selectAll();
-        map.addAttribute("userinfo",userList);
 
         return "index";
     }
