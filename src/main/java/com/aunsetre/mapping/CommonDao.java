@@ -4,7 +4,7 @@ import org.springframework.stereotype.Repository;
 
 /**
  * @Author: Aunsetre
- * @Date: 6/8/0008 17:28
+ * @DATE: 2018-06-15 15:40:01
  */
 @Repository
 public interface CommonDao {

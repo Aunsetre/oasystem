@@ -1,16 +1,14 @@
 package com.aunsetre.mapping;
 
 import com.aunsetre.pojo.User;
-import org.springframework.stereotype.Repository;
-
 import java.util.List;
-@Repository
+
 public interface UserMapper {
-    int deleteByPrimaryKey(Integer id);
+    int deleteByPrimaryKey(Integer userId);
 
     int insert(User record);
 
-    User selectByPrimaryKey(Integer id);
+    User selectByPrimaryKey(Integer userId);
 
     List<User> selectAll();
 

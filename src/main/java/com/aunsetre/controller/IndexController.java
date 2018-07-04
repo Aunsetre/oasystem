@@ -22,17 +22,9 @@ public class IndexController extends BaseController {
     }
 
 
-    @PostMapping("dologin")
-    public String dologin(Model model,@ModelAttribute User user) {
-        if (userService.login(user.getName(), user.getPwd()) != null) {
-            super.session.setAttribute("user",user);
-            return "index";
-        } else {
-            return "redirect:error";
-        }
-    }
+
     @ResponseBody
-    @GetMapping("GetUserAll")
+    @GetMapping("GetUserAll1")
     public String getUserAll(){
         List<User>userList=userService.selectAll();
         return gson.toJson(userList);

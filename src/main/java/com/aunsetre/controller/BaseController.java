@@ -9,10 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
 import java.util.Date;
-import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * @Author: Aunsetre
@@ -40,6 +37,7 @@ public class BaseController {
     public  String getIframeURL(){
         return request.getServletPath();
     }
+
 
 
 

@@ -4,11 +4,11 @@ import com.aunsetre.pojo.Role;
 import java.util.List;
 
 public interface RoleMapper {
-    int deleteByPrimaryKey(Integer rid);
+    int deleteByPrimaryKey(Integer roleId);
 
     int insert(Role record);
 
-    Role selectByPrimaryKey(Integer rid);
+    Role selectByPrimaryKey(Integer roleId);
 
     List<Role> selectAll();
 

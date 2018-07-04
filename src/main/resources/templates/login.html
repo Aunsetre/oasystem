@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <!--head部分-->
-<head th:include="layout.html">
+<head th:include="Common.html">
     <title>登录</title>
 </head>
 
@@ -15,7 +15,7 @@
         layer.msg('Hello World');
     });
 </script>
-<form action="/dologin" method="post">
+<!--<form action="/dologin" method="post">
     <label class="layui-form-label">帐号：</label>
     <div class="layui-input-block">
         <input type="text" style="width: 100px;" name="name" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
@@ -31,7 +31,14 @@
         </div>
     </div>
 
+</form>-->
+<form id="form" action="/dologin" method="post">
+    <input name="userName"/>
+    <input name="password"/>
+    <input type="button" id="submit" value="登录"/>
 </form>
 
 </body>
+<script th:src="@{/common/login.js}">
+</script>
 </html>

@@ -1,27 +1,55 @@
 package com.aunsetre.pojo;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.Data;
-import org.springframework.format.annotation.DateTimeFormat;
-
 import java.util.Date;
-@Data
+
 public class User {
-    private Integer id;
+    private Integer userId;
 
-    private String name;
+    private String userName;
 
-    private String pwd;
+    private String password;
 
-    private String email;
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone ="GMT+8")
-    private Date retime;
+    private Date createdTime;
 
-    private Integer state;
+    private Date updateTime;
 
-    private Integer rid;
+    public Integer getUserId() {
+        return userId;
+    }
 
-    private Integer logid;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
 
+    public String getUserName() {
+        return userName;
+    }
 
+    public void setUserName(String userName) {
+        this.userName = userName == null ? null : userName.trim();
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password == null ? null : password.trim();
+    }
+
+    public Date getCreatedTime() {
+        return createdTime;
+    }
+
+    public void setCreatedTime(Date createdTime) {
+        this.createdTime = createdTime;
+    }
+
+    public Date getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
+    }
 }
